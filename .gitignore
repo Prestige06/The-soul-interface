@@ -1,0 +1,26 @@
+# Node modules
+node_modules/
+
+# Next.js build output
+.next/
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# VSCode settings
+.vscode/
+
+# MacOS system files
+.DS_Store
+
+# Environment variables (make sure to use this for secret management, don't push sensitive data)
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Other build artifacts (you can customize this based on the tools you use)
+build/
+dist/
