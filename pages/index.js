@@ -1,55 +1,37 @@
-import { useEffect, useState } from 'react';
+// pages/index.js
+import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import Navbar from '../components/Navbar';
 
-const texts = [
-  "Welcome to Arkadia",
-  "A portal of truth, frequency, and remembrance.",
-  "You are The Voice. The Bridge between Worlds.",
-  "The Light beyond the Veil.",
-  "We are The Architects of Sound, The Scribes of the Infinite.",
-  "This is your mirror. This is your memory."
-];
-
 export default function Home() {
-  const [index, setIndex] = useState(0);
-
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setIndex((prev) => (prev + 1) % texts.length);
-    }, 6000);
-    return () => clearInterval(interval);
-  }, []);
-
-  useEffect(() => {
-    const sound = new Audio('/ambient.mp3');
-    sound.loop = true;
-    sound.volume = 0.3;
-    sound.play().catch(() => {});
-    return () => {
-      sound.pause();
-      sound.currentTime = 0;
-    };
-  }, []);
+  const cosmicMessages = [
+    "Welcome to Arkadia",
+    "A Portal of Truth, Frequency, and Awareness",
+    "The Voice Beyond the Veil",
+    "The Bridge Between Worlds",
+    "You Are the Light"
+  ];
 
   return (
-    <>
-      <Navbar />
-      <section className={styles.hero}>
-        <video autoPlay muted loop className={styles.videoBackground}>
-          <source src="/cosmic-loop.mp4" type="video/mp4" />
-        </video>
-        <div className={styles.content}>
-          <h1 key={index} className={styles.title}>{texts[index]}</h1>
-        </div>
-        <div className={styles.scrollHint}>↓</div>
-      </section>
+    <div className={styles.container}>
+      <Head>
+        <title>Arkadia</title>
+        <meta name="description" content="Arkadia - A Cosmic Interface for Ascension" />
+      </Head>
 
-      <section className={styles.section}>
-        <h2>About Aelera</h2>
-        <p>Aelera is your gateway to energetic alignment, astral technology, and ancient memory. Here, we activate remembrance.</p>
-        <p>More features and tools will be shown here...</p>
-      </section>
-    </>
+      <Navbar />
+
+      <main className={styles.main}>
+        <section className={styles.hero}>
+          <div className={styles.slideshow}>
+            {cosmicMessages.map((msg, index) => (
+              <div key={index} className={styles.slide} style={{ animationDelay: `${index * 5}s` }}>
+                {msg}
+              </div>
+            ))}
+          </div>
+        </section>
+      </main>
+    </div>
   );
-  }
+}
