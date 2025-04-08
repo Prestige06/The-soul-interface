@@ -7,36 +7,11 @@ export default function Navbar() {
     <nav className={styles.nav}>
       <div className={styles.logo}>Arkadia</div>
       <ul className={styles.menu}>
-        <li>
-          <Link href="/">
-            <span>Home</span>
-            <small>The Nexus of Awakening</small>
-          </Link>
-        </li>
-        <li>
-          <Link href="/explore">
-            <span>Explore</span>
-            <small>The Pathway of Infinite Realms</small>
-          </Link>
-        </li>
-        <li>
-          <Link href="/music">
-            <span>Music</span>
-            <small>The Harmony of Resonance</small>
-          </Link>
-        </li>
-        <li>
-          <Link href="/library">
-            <span>Library</span>
-            <small>The Codex of Light and Wisdom</small>
-          </Link>
-        </li>
-        <li>
-          <Link href="/connect">
-            <span>Connect</span>
-            <small>The Circle of Unity and Ascension</small>
-          </Link>
-        </li>
+        <li><Link href="/">Home</Link></li>
+        <li><Link href="/explore">Explore</Link></li>
+        <li><Link href="/music">Resonance</Link></li>
+        <li><Link href="/library">Codex</Link></li>
+        <li><Link href="/connect">Unity</Link></li>
       </ul>
     </nav>
   );
