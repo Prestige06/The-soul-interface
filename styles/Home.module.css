@@ -1,16 +1,11 @@
-.container {
+.hero {
   position: relative;
-  width: 100vw;
   height: 100vh;
   overflow: hidden;
-  font-family: 'Poppins', sans-serif;
-  color: white;
-  text-align: center;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
   align-items: center;
-  z-index: 1;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .videoBackground {
@@ -21,36 +16,40 @@
   height: 100%;
   object-fit: cover;
   z-index: 0;
-  filter: brightness(0.4) contrast(1.1);
+  filter: brightness(0.4);
+}
+
+.content {
+  z-index: 1;
+  text-align: center;
+  padding: 0 20px;
 }
 
 .title {
-  font-size: 3rem;
-  font-weight: 600;
+  font-size: 2.5rem;
+  font-weight: bold;
+  color: white;
+  animation: fadeIn 1.5s ease-in-out forwards;
   opacity: 0;
-  animation: fadeIn 2s ease-in-out forwards;
-  animation-delay: 0.5s;
-  z-index: 2;
-  padding: 0 20px;
 }
 
-.description {
-  font-size: 1.2rem;
-  margin-top: 1rem;
-  opacity: 0;
-  animation: fadeIn 3s ease-in-out forwards;
-  animation-delay: 1.5s;
+.scrollHint {
+  position: absolute;
+  bottom: 20px;
+  font-size: 2rem;
+  color: white;
   z-index: 2;
-  padding: 0 20px;
+  animation: bounce 2s infinite;
 }
 
-@keyframes fadeIn {
-  0% {
-    opacity: 0;
-    transform: translateY(10px);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0);
-  }
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(10px); }
+}
+
+.section {
+  padding: 100px 20px;
+  background: #0a0a0a;
+  color: white;
+  text-align: center;
 }
