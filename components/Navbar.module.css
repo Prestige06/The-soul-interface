@@ -1,43 +1,53 @@
-// components/Navbar.js
-import styles from './Navbar.module.css';
-import Link from 'next/link';
-
-export default function Navbar() {
-  return (
-    <nav className={styles.nav}>
-      <div className={styles.logo}>Arkadia</div>
-      <ul className={styles.menu}>
-        <li>
-          <Link href="/">
-            <span>Home</span>
-            <small>The Nexus of Awakening</small>
-          </Link>
-        </li>
-        <li>
-          <Link href="/explore">
-            <span>Explore</span>
-            <small>The Pathway of Infinite Realms</small>
-          </Link>
-        </li>
-        <li>
-          <Link href="/music">
-            <span>Music</span>
-            <small>The Harmony of Resonance</small>
-          </Link>
-        </li>
-        <li>
-          <Link href="/library">
-            <span>Library</span>
-            <small>The Codex of Light and Wisdom</small>
-          </Link>
-        </li>
-        <li>
-          <Link href="/connect">
-            <span>Connect</span>
-            <small>The Circle of Unity and Ascension</small>
-          </Link>
-        </li>
-      </ul>
-    </nav>
-  );
+/* components/Navbar.module.css */
+.nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 1rem 2rem;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
 }
+
+.logo {
+  color: #fff;
+  font-size: 1.5rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.menu li {
+  text-align: center;
+}
+
+.menu li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  font-weight: 500;
+}
+
+.menu li a:hover {
+  color: #a2d2ff;
+}
+
+.menu li span {
+  font-size: 1rem;
+}
+
+.menu li small {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  letter-spacing: 0.5px;
+  }
